@@ -1,4 +1,4 @@
-// single line comment
+// SOME NOTES FROM PART 1
 /*
 * DEFINE MUTABLE VAR: let _var_
 * MUTATE VAR: _var_ = _newValue_
@@ -16,10 +16,25 @@ if-else control structure:
 * TYPE COERCION = + string (concat), - stirng (number)
 * FALSY VALUES = 0, '' , undefined, null, NaN
 ? LOGICAL OPERATORS = AND &&, OR ||, NOT !
+switch control
+! switch(var) {
+! case val: 
+!    do it;
+!    break; }
+conditional (ternary) operator
+! var2 = var1 >= num ? 'text yes': 'text no'
+e.g. const drink = age >= 18 ? 'wine': 'water'
+*/
+
+/*
+* use strict
+* function declaration and expression
+? Arrow function
+? example: const calcAge3 = birthYear => 2037 - birthYear;
 */
 
 // ---------------------------
-// * CODING CHALLENGE #1
+// * CODING CHALLENGE #1 PART 1
 
 let massMark = 78;
 let heightMark = 1.69;
@@ -33,7 +48,7 @@ console.log(bmiMark,bmiJohn,markHigherBMI);
 
 
 // ---------------------------
-// * CODING CHALLENGE #2
+// * CODING CHALLENGE #2 PART 1
 
 // let massMark = 78;
 // let heightMark = 1.69;
@@ -51,7 +66,7 @@ if (markHigherBMI) {
 
 
 // ---------------------------
-// * CODING CHALLENGE #3
+// * CODING CHALLENGE #3 PART 1
 
 const dolphinsScores = [30, 40, 90];
 const koalasScores = [27, 37, 87];
@@ -80,3 +95,42 @@ if (dolphinsAverage>koalasAverage && dolphinsScores.some(el => el > 100)) {
 } else {
     console.log('all wrong!')
 }
+
+// ---------------------------
+// * CODING CHALLENGE #4 PART 1
+
+const bill = 49;
+const tip = bill < 50 || bill > 300 ? bill*0.2: bill*0.15;
+console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill+tip}`);
+
+// --------------------------
+// * CODING CHALLENGE #1 PART 2
+
+
+const calcAverage = function (scores) {
+    const avgScore = (scores[0]+scores[1]+scores[2])/3
+    return avgScore
+}
+
+const dolphins = [85,54,41]
+const koalas = [23,34,27]
+
+
+const checkWinner = (dolphins,koalas) => {
+    const avgDolphins = calcAverage(dolphins)
+    const avgKoalas = calcAverage(koalas)
+    let result;
+    if (avgDolphins > 2*avgKoalas) {
+        result = `Dolphin win (${avgDolphins} vs. ${avgKoalas})`;
+    } else if (avgKoalas > 2*avgDolphins) {
+        result = `Koalas win (${avgKoalas} vs. ${avgDolphins})`;
+    } else {
+        result = `no winners`;
+    }
+    return result;
+}
+
+console.log(checkWinner(dolphins,koalas))
+
+// --------------------------
+// * CODING CHALLENGE #2 PART 2
