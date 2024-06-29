@@ -134,3 +134,23 @@ console.log(checkWinner(dolphins,koalas))
 
 // --------------------------
 // * CODING CHALLENGE #2 PART 2
+
+const calcTip = function(bill) {
+    let tip;
+    bill < 50 || bill > 300 ? tip = bill*0.2 : tip = bill*0.15;
+    tips.push(tip);
+    totals.push(tip+bill);
+}
+
+const billArray = [125,555,44];
+let tips = [];
+let totals = [];
+
+for (let i=0; i<billArray.length; i++) {
+    calcTip(billArray[i]);
+}
+
+console.log(tips, totals)
+
+// --------------------------
+// * CODING CHALLENGE #3 PART 2
