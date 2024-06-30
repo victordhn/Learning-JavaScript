@@ -1,5 +1,5 @@
 ## Estudo Básico JavaScript
 
 - Seguindo o curso do @jonasschmedtman no Udemy
-- Os scripts utilizados serão numerados de 0 até ...
+- Fundamentals 1 e 2 feitos!
 - Mais informações em breve aqui no readme!
