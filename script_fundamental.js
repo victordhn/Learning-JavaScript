@@ -29,9 +29,24 @@ e.g. const drink = age >= 18 ? 'wine': 'water'
 /*
 * use strict
 * function declaration and expression
-? Arrow function
-? example: const calcAge3 = birthYear => 2037 - birthYear;
+! Arrow function
+! example: const calcAge3 = birthYear => 2037 - birthYear;
+? ARRAYS = []
+? append: array.push(val)  
+? add to beginning: array.unshift(val)  
+? remove last: array.pop()
+? remove first: array.shift()
+? show index: array.indexOf(val)
+? in array?: array.includes(val)
+* OBJECTS = {} key-value pairs
+* object with properties, order does not matter
+* can add properties (using dot or brackets)
+? for loop (initialization; condition; increment)
+? continue (skip iteration) / break (finish loop)
+* while loop (condition)
 */
+
+'use strict';
 
 // ---------------------------
 // * CODING CHALLENGE #1 PART 1
@@ -154,3 +169,56 @@ console.log(tips, totals)
 
 // --------------------------
 // * CODING CHALLENGE #3 PART 2
+
+const mark = {
+    firstName: 'Mark',
+    secondName: 'Miller',
+    mass: 78,
+    height: 1.69,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height**2)
+    }
+};
+
+const john = {
+    firstName: 'John',
+    secondName: 'Smith',
+    mass: 92,
+    height: 1.95,
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height**2)
+    }
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+if (mark.bmi > john.bmi) {
+    console.log(`Mark's BMI ${mark.bmi} is higher than John's BMI ${john.bmi}`);
+} else {
+    console.log(`John's BMI ${john.bmi} is higher than Mark's BMI ${mark.bmi}`);
+};
+
+// --------------------------
+// * CODING CHALLENGE #4 PART 2
+
+const bill = [22,295,176,440,37,105,10,1100,86,52];
+const tips = [];
+const totals = [];
+
+for (let i=0; i<bill.length; i++) {
+    bill[i] < 50 || bill[i] > 300 ? tips.push(bill[i]*0.2) : tips.push(bill[i]*0.15);
+    totals.push(bill[i]+tips[i])
+}
+console.log(tips,totals)
+
+const calcAverage = function(arr) {
+    let sum = 0
+    for (let i=0; i<arr.length; i++) {
+        sum += arr[i]
+    }
+    return sum/arr.length
+}
+
+console.log(calcAverage(totals))
+console.log(calcAverage(tips))
