@@ -36,14 +36,11 @@ document.querySelector('.check').addEventListener('click', function () {
         document.querySelector('.highscore').textContent =
           document.querySelector('.score').textContent;
       }
-    } else if (guess > secretNumber) {
+    } else if (guess !== secretNumber) {
       document.querySelector('.score').textContent =
         Number(document.querySelector('.score').textContent) - 1;
-      document.querySelector('.message').textContent = 'You guessed too high!';
-    } else if (guess < secretNumber) {
-      document.querySelector('.score').textContent =
-        Number(document.querySelector('.score').textContent) - 1;
-      document.querySelector('.message').textContent = 'You guessed too low!';
+      document.querySelector('.message').textContent =
+        guess > secretNumber ? 'You guessed too high!' : 'You guessed too low!';
     }
   } else {
     document.querySelector('.message').textContent = 'You lost! Game over';
@@ -57,4 +54,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.score').textContent = 20;
   document.querySelector('.guess').value = '';
+  document.querySelector('body').style.backgroundColor = '#222';
 });
