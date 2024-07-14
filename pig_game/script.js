@@ -35,7 +35,7 @@ const add = function (num) {document.querySelector(`.player--${num}`).classList.
 const remove = function (num) {document.querySelector(`.player--${num}`).classList.remove("player--active");}
 
 const checkWinner = function (score,num) {
-    if (score >= 20) {
+    if (score >= 50) {
         document.querySelector(`.player--${num}`).classList.add("player--winner");
         document.querySelector('.btn--roll').disabled=true;
         document.querySelector('.btn--hold').disabled=true;
