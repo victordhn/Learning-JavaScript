@@ -1,0 +1,6 @@
+1. roll a dice
+2. add to current score
+3. hold score?
+4. if hold, add current score to total score and switch to player 2
+- if hold 1 = lose all current points and pass to next player
+-- first to achieve 100 points wins
