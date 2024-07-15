@@ -11,11 +11,11 @@ function addDec(a, b) {
   return a + b;
 }
 
-const addExp = function (a,b) {
-    return a+b;
-}
+const addExp = function (a, b) {
+  return a + b;
+};
 
-const addArr = (a,b) => a+b;
+const addArr = (a, b) => a + b;
 
 console.log('after declaration', addDec(2, 3));
 console.log('after expression', addExp(2, 3));
@@ -28,7 +28,25 @@ const victor = {
   year: 1991,
   name: 'Victor',
   calcAge: function () {
-    return 2024 - this.year
-  }
-}
+    return 2024 - this.year;
+  },
+};
 console.log(victor.calcAge());
+
+// primitives and objects
+
+// primitives
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age, oldAge);
+
+// object
+const me = {
+  name: 'victor',
+  age: 30,
+};
+
+const friend = me;
+friend.age = 27;
+console.log(me, friend);
