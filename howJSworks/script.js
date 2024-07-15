@@ -50,3 +50,9 @@ const me = {
 const friend = me;
 friend.age = 27;
 console.log(me, friend);
+
+// para criar um novo objeto (copair, e nao apenas usar a msm referencia)
+// Object.assign({},me)
+const me2 = Object.assign({},me);
+me2.age=30
+console.log(me,friend,me2)
