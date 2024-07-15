@@ -61,9 +61,7 @@ let gameState = {
   player1: 0,
 }
 
-
 reset();
-
 
 document.querySelector('.btn--roll').addEventListener('click', function () {
   let randomInt = Math.floor(Math.random() * 6 + 1);
