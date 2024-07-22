@@ -57,7 +57,7 @@ transformer('JavaScrip is the best', oneWord);
 const high5 = function () {
   console.log('SUP');
 };
-document.querySelector('body').addEventListener('click', high5);
+// document.querySelector('body').addEventListener('click', high5);
 
 // A function returning a function
 const greet = function (greeting) {
@@ -72,3 +72,56 @@ greet('bom dia')('José');
 
 const greet2 = greeting => name => console.log(`${greeting} ${name}`);
 greet2('Valeu aí')('Victor');
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'jonas');
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+// call, apply and bind
+
+//function.call(this,arguments)
+book.call(eurowings, 23, 'Sarah');
+
+//function.apply(this,[arrayofarguments])
+const flightData = [123, 'Victor'];
+book.apply(lufthansa, flightData);
+
+//BIND
+//function.bind(this,args) ---> creates a new function with a bounded THIS and args
+const bookEW = book.bind(eurowings);
+bookEW(109, 'Steve');
+
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.answer-poll')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// partial bind
+const addTax = (rate, value) => value + rate * value;
+console.log(addTax(0.1, 100));
+const addVAT = addTax.bind(null, 0.23);
+console.log(addVAT(100));
