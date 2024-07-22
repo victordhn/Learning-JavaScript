@@ -125,3 +125,26 @@ const addTax = (rate, value) => value + rate * value;
 console.log(addTax(0.1, 100));
 const addVAT = addTax.bind(null, 0.23);
 console.log(addVAT(100));
+
+// * Closure!!!!
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(passengerCount);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();
+console.dir(booker);
+
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  document.querySelector('body').addEventListener('click', function () {
+    header.style.color = 'blue';
+  });
+})();
